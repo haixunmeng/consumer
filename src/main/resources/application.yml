@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: consumer
+
+server:
+  port: 12001
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://root:123456@1.eureka.com:10001/eureka/,http://root:123456@2.eureka.com:10002/eureka/,http://root:123456@3.eureka.com:10003/eureka/
