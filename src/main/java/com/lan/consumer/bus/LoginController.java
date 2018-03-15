@@ -7,14 +7,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloWorldConsumer {
+public class LoginController {
 	
 	@Autowired
-	private HelloWorldService helloWorldService;
+	private LoginService loginService;
 
-	@GetMapping("/hello/world")
+	@GetMapping("/login")
 	public Map<String, String> hello(){
-		return helloWorldService.hello();
+		LoginInputBean input = new LoginInputBean();
+		
+		input.setUsername("lanlan");
+		input.setPassword("123456");
+		
+		return loginService.login(input);
 	}
 
 }
